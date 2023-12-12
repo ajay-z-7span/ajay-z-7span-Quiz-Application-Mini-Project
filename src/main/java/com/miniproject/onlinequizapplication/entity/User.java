@@ -30,5 +30,7 @@ public class User {
     @NotBlank(message = "Password should not be blank")
     private String password;
 
-    private String role;
+    @Column(length = 32, columnDefinition = "varchar(32) default 'USER'")
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
 }

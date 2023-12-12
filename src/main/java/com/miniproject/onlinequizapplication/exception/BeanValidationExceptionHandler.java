@@ -25,18 +25,5 @@ public class BeanValidationExceptionHandler {
         APIResponse<List<BeanValidationDTO>> response = new APIResponse<>("error",validationDTOS);
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
-
-    @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<APIResponse<List<BeanValidationDTO>>> onConstraintValidationException(ConstraintViolationException  ex) {
-        List<BeanValidationDTO> validationDTOS = new ArrayList<>();
-
-//        ex.getConstraintViolations()
-//        ex.getC .getFieldErrors()
-//                .forEach(fieldError -> {
-//                    BeanValidationDTO validationDTO = new BeanValidationDTO(fieldError.getField(),fieldError.getDefaultMessage());
-//                    validationDTOS.add(validationDTO);
-//                });
-//        APIResponse<List<BeanValidationDTO>> response = new APIResponse<>("error",validationDTOS);
-        return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-    }
+    
 }
